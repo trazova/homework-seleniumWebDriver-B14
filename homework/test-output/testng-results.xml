@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2020-04-26T01:06:55Z" name="Default suite" finished-at="2020-04-26T01:07:06Z" duration-ms="10926">
+    <groups>
+    </groups>
+    <test started-at="2020-04-26T01:06:55Z" name="Default test" finished-at="2020-04-26T01:07:06Z" duration-ms="10926">
+      <class name="homework1.OpenAndClosePage">
+        <test-method is-config="true" signature="start()[pri:0, instance:homework1.OpenAndClosePage@3ee0fea4]" started-at="2020-04-26T01:06:55Z" name="start" finished-at="2020-04-26T01:06:59Z" duration-ms="3309" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- start -->
+        <test-method signature="trHomework1()[pri:0, instance:homework1.OpenAndClosePage@3ee0fea4]" started-at="2020-04-26T01:06:59Z" name="trHomework1" finished-at="2020-04-26T01:07:05Z" duration-ms="6558" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- trHomework1 -->
+        <test-method is-config="true" signature="stop()[pri:0, instance:homework1.OpenAndClosePage@3ee0fea4]" started-at="2020-04-26T01:07:05Z" name="stop" finished-at="2020-04-26T01:07:06Z" duration-ms="999" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stop -->
+      </class> <!-- homework1.OpenAndClosePage -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
