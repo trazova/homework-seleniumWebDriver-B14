@@ -50,8 +50,9 @@ public class HomeWork8 {
 		//Открывает страницу магазина	 
 		driver.get(url);
 
+		
 		//Finds product image and checks div class to contain word "sticker"
-		boolean check = getElementsStickers(By.cssSelector("li[class='product column shadow hover-light'] div:nth-of-type(1) div"));
+		boolean check = getElementsStickers(By.cssSelector(".product div:nth-of-type(1) div"));
 		assertTrue(check);
 	}
 
