@@ -9,8 +9,6 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -92,7 +90,7 @@ public class HomeWork10 {
 				.replace("rgb(", "")
 				.replace(")", "")
 				.split(", ");               
-		
+
 		assertEquals(colorPp[0], colorPp[1]);
 		assertEquals(colorPp[0], colorPp[2]);
 
@@ -121,8 +119,6 @@ public class HomeWork10 {
 		String campPN = campPriceSizeProductPage.replace("px", ""); 
 		float f4 = Float.valueOf(campPriceN);
 		assertTrue(f4 > f3, "FAIL: campaign price is NOT bigger than regular price");
-
-		//Необходимо убедиться, что тесты работают во всех трёх ключевых браузерах (Chrome, Firefox, IE).
 	}
 
 	@AfterClass
