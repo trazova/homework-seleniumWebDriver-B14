@@ -1,7 +1,9 @@
 package homework1;
 
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -25,23 +27,15 @@ public class HomeWork8 {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}	     
 
-	public boolean areElementsPresent(By locator) {
-		return driver.findElements(locator).size() > 0;
-	}
-
-	public boolean getElementsStickers (By locator) {
-		List<WebElement> listValues = driver.findElements(locator);
-		for(WebElement e : listValues )
-		{	
-			String attr = e.getAttribute("class");
-			if (attr == null || !attr.contains("sticker"))
-			{
-				return false;
-			}
-		}		
-		return true;
-	}
-
+	public List<String> getAttributeForEach(By locator, String attributeName) {
+	        List<WebElement> elements = driver.findElements(locator);
+	        List<String> attributes = new ArrayList<String>();
+	        for (WebElement element : elements) {
+	            attributes.add(element.getAttribute(attributeName));
+	        }
+	        return attributes;
+	    }
+	
 	@Test
 	public void checkStickers() throws InterruptedException {
 		//параметры
@@ -50,10 +44,10 @@ public class HomeWork8 {
 		//Открывает страницу магазина	 
 		driver.get(url);
 
-		
 		//Finds product image and checks div class to contain word "sticker"
-		boolean check = getElementsStickers(By.cssSelector(".product div:nth-of-type(1) div"));
-		assertTrue(check);
+		int countStickers = getAttributeForEach(By.cssSelector(".product div[class*='sticker']"), "class").size();
+		int countProducts = driver.findElements(By.cssSelector(".product [class='link']")).size();
+		assertEquals(countStickers, countProducts);
 	}
 
 	@AfterClass
